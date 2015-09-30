@@ -1,0 +1,32 @@
+<script type="text/x-red" data-template-name="videodisplay">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+    		<label for="node-input-channelid"><i class="fa fa-tag"></i> Channel</label>
+        <select id="node-input-channelid" style="width:73%">
+          <option value="ch1">ch1</option>
+          <option value="ch2">ch2</option>
+          <option value="ch3">ch3</option>
+          <option value="ch4">ch4</option>
+        </select>
+		</div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('videodisplay',{
+        color: '#a6bbcf',
+        category: 'WebCMS',
+        defaults: {
+        	name: {value:""},
+          channelid: {value:"ch1"}
+        },
+        inputs:1,
+        outputs:0,
+        icon: "videodisplay.png",
+        label: function() {
+            return this.name;
+        },
+    });
+</script>
